@@ -1,7 +1,7 @@
 
 body {
-    background-color:EFB0A1 ;
-    color:797D81 ;
+    background-color: #FFFFFF;
+    color: #0C1713;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -30,7 +30,7 @@ nav  {
 
 footer {
     background-color: F4AFB4;
-    color: EFB0A1;
+    color: #EFB0A1;
     text-align: center;
     padding: 10px;
     margin-top: 30px;
@@ -44,3 +44,15 @@ form {
     flex-direction: column;
 }
 
+ button {
+    background-color: #D5C7BC
+    color: #FFFFFF ;
+    border: none;
+    cursor: pointer;
+ }
+
+ button:hover {
+    background-color: #69DDFF;
+ }
+
+ #error
