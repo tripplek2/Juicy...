@@ -46,7 +46,7 @@ form {
 
  button {
     background-color: #D5C7BC
-    color: #FFFFFF ;
+    color: #FFFFFF;
     border: none;
     cursor: pointer;
  }
@@ -55,4 +55,22 @@ form {
     background-color: #69DDFF;
  }
 
- #error
+ #juice-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+ }
+
+ .juice-card {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: var(--shadow);
+ }
+
+ .juice-card button{
+    margin-top: 10px;
+    width: 100px;
+ }
