@@ -126,4 +126,18 @@ function handleAddJuice(event) {
     }
 }
 
+// Creating new juice obj
+
+const newJuice = new Juice(
+    nameInput.value,
+    parseFloat(priceInput.value),
+    sizeInput.value,
+    flavourInput.value
+);
+
+manager.addJuice(newJuice);
+renderJuices();
+
+
+
 
