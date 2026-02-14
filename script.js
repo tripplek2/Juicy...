@@ -127,7 +127,6 @@ function handleAddJuice(event) {
 }
 
 // Creating new juice obj
-
 const newJuice = new Juice(
     nameInput.value,
     parseFloat(priceInput.value),
@@ -138,6 +137,12 @@ const newJuice = new Juice(
 manager.addJuice(newJuice);
 renderJuices();
 
+// Clear form fields
+nameInput.value = "";
+priceInput.value = "";
+sizeInput.value = "";
+flavourInput = "";
 
+// Event listener
 
 
