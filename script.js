@@ -11,25 +11,29 @@ function Juice (name, price, size, flavour) {
 // Juice manager
 
 function JuiceManager() {
-    this.juices = this.loadFromStorage();
-    this.currentId = 0;
+    this.juices = this.loadJuicesFromStorage();
+    this.currentId = this.loadCurrentIdFromStorage();
 }
 
 // Storage methods
 
+// Saving juices and currentId to local storage
 JuiceManager.prototype.saveToStorage = function() {
     localStorage.setItem("juicedata", JSON.stringify(this.juices));
+    localStorage.setItem("juiceCurrentId", this.currentId);
 }
 
-JuiceManager.prototype.loadFromStorage = function() {
-    const savedData = localStorage.getItem("juiceData");
+// Load saved juices from localStorage
+JuiceManager.prototype.loadJuicesFromStorage = function() {
+    const savedData = localStorage.getItem("juicedata");
     return savedData ? JSON.parse(savedData) :{};
-}
+};
 
-JuiceManager.prototype.loadFromStorage = function() {
+// Load currentId from localStorage
+JuiceManager.prototype.loadCurrentIdFromStorage = function() {
     const savedId = localStorage.getItem("juiceCurrentId");
-    return saveId ? parseInt(saveId) : 0;
-}
+    return savedId ? parseInt(savedId) : 0;
+};
 
 // Juice production
 
@@ -44,7 +48,7 @@ JuiceManager.prototype.addJuice = function(juice) {
 
 JuiceManager.prototype.toggleAvailability = function(id) {
     if (this.juices[id]) {
-        this.juices[id].isAvailable = !this.juices[id].Available;
+        this.juices[id].isAvailable = !this.juices[id].isAvailable;
         this.saveToStorage();
     }
 }
@@ -61,6 +65,7 @@ JuiceManager.prototype.deleteJuice = function(id) {
 
 // UI and DOM manipulation
 
+const manager = new JuiceManager();
 // Rendering all juices
 
 function renderJuices() {
@@ -69,7 +74,7 @@ function renderJuices() {
     juiceListEl.innerHTML = "";
 
     // Converting juices obj to array
-    const juiceArray = Object.values(manager.juices);
+    const juicesArray = Object.values(manager.juices);
 
     // Updating total count
     const totalJuicesEl = document.getElementById("Total-juices");
@@ -94,9 +99,9 @@ function renderJuices() {
                     <p>Size:${juice.size}</p>
                     <p>Flavour:${juice.flavour}</p>
                     <p>Status:${juice.isAvailable ? "Available" : "Not Available"}</p>
-                    <button onclick="manager.toggleAvailability(${juice.id});
-
-                    <button>
+                    <button onclick="manager.toggleAvailability(${juice.id}); renderJuices();">
+                     Toggle Availability
+                    </button>
                     <button onclick="manager.deleteJuice(${juice.id}); renderJuices();">
                      Delete
                     </button> `;
@@ -120,11 +125,11 @@ function handleAddJuice(event) {
 
     //  Validation
 
-    if (!nameInput || !priceInput.value || !sizeInput.value || !flavourInput) {
+    if (!nameInput || !priceInput.value || !sizeInput.value || !flavourInput.value) {
         alert("please fill in all fields");
         return;
     }
-}
+
 
 // Creating new juice obj
 const newJuice = new Juice(
@@ -134,6 +139,7 @@ const newJuice = new Juice(
     flavourInput.value
 );
 
+
 manager.addJuice(newJuice);
 renderJuices();
 
@@ -141,7 +147,9 @@ renderJuices();
 nameInput.value = "";
 priceInput.value = "";
 sizeInput.value = "";
-flavourInput = "";
+flavourInput.value = "";
+
+}
 
 // Event listener
 document.addEventListener("DOMContentLoaded", function() {
