@@ -17,3 +17,11 @@ function JuiceManager() {
 
 // Storage methods
 
+JuiceManager.prototype.saveToStorage = function() {
+    localStorage.setItem("juicedata", JSON.stringify(this.juices));
+}
+
+JuiceManager.prototype.loadFromStorage = function() {
+    const savedData = localStorage.getItem("juiceData");
+    return savedData ? JSON.parse(savedData) :{};
+}
