@@ -83,5 +83,23 @@ function renderJuices() {
         return;
     }
 
+    // Looping through each juiice and creating a card
+
+    juicesArray.forEach((juice) => {
+        const div = document.createElement("div");
+        div.classList.add("juice-card");
+
+        div.innerHTML = `<h3>${juice.name}</h3>
+                        <p>price:${juice.price</p>
+        
+        
+        
+        
+        
+        
+        `
+
+    }
+
 
 }
