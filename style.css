@@ -10,7 +10,7 @@ body {
 
 h1,h2 {
     color: transparent;
-    font-weight: 100px;
+    font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     background-clip: text;
@@ -24,7 +24,7 @@ nav {
 nav a {
     color: #1B998B;
     margin: 0 10px;
-    border-radius: 2opx;
+    border-radius: 2px;
     font-weight: bold;
 }
 
@@ -44,7 +44,7 @@ label {
 
 
 footer {
-    background-color: F4AFB4;
+    background-color: #F4AFB4;
     color: #EFB0A1;
     text-align: center;
     padding: 10px;
@@ -57,7 +57,7 @@ footer {
 #form-container {
     width: 600px;
     margin: 50px auto;
-    padding: 2opx;
+    padding: 20px;
     border-radius: 10px;
     background-color: #69DDFF;
 }
@@ -70,7 +70,7 @@ form {
 
  button {
     background-color: #D5C7BC
-    
+
  }
 
  button:hover {
@@ -83,6 +83,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
     
  }
 
@@ -90,7 +91,7 @@ form {
     background-color: #FFFFFF;
     padding: 10px;
     border-radius: 10px;
-    width: 100px;
+    width: 200px;
     box-shadow: var(--shadow);
  }
 

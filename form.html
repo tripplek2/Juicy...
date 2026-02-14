@@ -15,17 +15,17 @@
             <a href="about.html">About</a>
         </nav>
     </header>
-    <div>
+    <div id="form-container">
         <h2>Juice details</h2>
-        <form>
-            <label for="name">NameOfTheJuice:</label>
+        <form onsubmit="handleAddJuice(event)">
+            <label for="name">Name Of The Juice:</label>
             <input type="text" id="name" required>
 
             <label for="price">Price:</label>
             <input type="text" id="price" required>
 
-            <label for="size">Size:</label>
-            <select>
+            <label for="size">size:</label>
+            <select id="size">
                 <option value="Select size"></option>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
