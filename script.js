@@ -58,3 +58,30 @@ JuiceManager.prototype.deleteJuice = function(id) {
         return true;
     }
 }
+
+// UI and DOM manipulation
+
+// Rendering all juices
+
+function renderJuices() {
+    const juiceListEl = document.getElementById("juice-list");
+    if (!juiceListEl) return;
+    juiceListEl.innerHTML = "";
+
+    // Converting juices obj to array
+    const juiceArray = Object.values(manager.juices);
+
+    // Updating total count
+    const totalJuicesEl = document.getElementById("Total-juices");
+    if (totalJuicesEl) {
+        totalJuicesEl.textContent = juicesArray.length;
+    }
+
+    // Notification message
+    if (juicesArray.length === 0) {
+        juiceListEl.innerHTML = "<p>No juices!</p>";
+        return;
+    }
+
+
+}
