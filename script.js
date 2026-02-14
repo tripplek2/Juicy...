@@ -144,5 +144,8 @@ sizeInput.value = "";
 flavourInput = "";
 
 // Event listener
+document.addEventListener("DOMContentLoaded", function() {
+    renderJuices();
+});
 
 
