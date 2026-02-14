@@ -90,16 +90,30 @@ function renderJuices() {
         div.classList.add("juice-card");
 
         div.innerHTML = `<h3>${juice.name}</h3>
-                        <p>price:${juice.price</p>
-        
-        
-        
-        
-        
-        
-        `
+                    <p>price:${juice.price}</p>
+                    <p>Size:${juice.size}</p>
+                    <p>Flavour:${juice.flavour}</p>
+                    <p>Status:${juice.isAvailable ? "Available" : "Not Available"}</p>
+                    <button onclick="manager.toggleAvailability(${juice.id});
 
-    }
+                    <button>
+                    <button onclick="manager.deleteJuice(${juice.id}); renderJuices();">
+                     Delete
+                    </button> `;
+                    
+        juiceListEl.appendChild(div);
 
+    });
 
 }
+
+// Form handling
+
+function handleAddJuice(event) {
+    event.preventDefault();
+
+    // Get input values
+    const
+}
+
+
