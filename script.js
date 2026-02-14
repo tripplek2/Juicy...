@@ -113,7 +113,17 @@ function handleAddJuice(event) {
     event.preventDefault();
 
     // Get input values
-    const
+    const nameInput = document.getElementById("name");
+    const priceInput = document.getElementById("price");
+    const sizeInput = document.getElementById("size");
+    const flavourInput = document.getElementById("flavour");
+
+    //  Validation
+
+    if (!nameInput || !priceInput.value || !sizeInput.value || !flavourInput) {
+        alert("please fill in all fields");
+        return;
+    }
 }
 
 
