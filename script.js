@@ -25,3 +25,36 @@ JuiceManager.prototype.loadFromStorage = function() {
     const savedData = localStorage.getItem("juiceData");
     return savedData ? JSON.parse(savedData) :{};
 }
+
+JuiceManager.prototype.loadFromStorage = function() {
+    const savedId = localStorage.getItem("juiceCurrentId");
+    return saveId ? parseInt(saveId) : 0;
+}
+
+// Juice production
+
+JuiceManager.prototype.addJuice = function(juice) {
+    this.currentId++;
+    juice.id = this.currentId;
+    this.juices[juice.id] = juice;
+    this.saveToStorage();
+};
+
+// Availability of the juice
+
+JuiceManager.prototype.toggleAvailability = function(id) {
+    if (this.juices[id]) {
+        this.juices[id].isAvailable = !this.juices[id].Available;
+        this.saveToStorage();
+    }
+}
+
+// Deleting the juice
+
+JuiceManager.prototype.deleteJuice = function(id) {
+    if (this.juices[id]) {
+        delete this.juices[id];
+        this.saveToStorage();
+        return true;
+    }
+}
