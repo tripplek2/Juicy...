@@ -95,7 +95,7 @@ function renderJuices() {
         div.classList.add("juice-card");
 
         div.innerHTML = `<h3>${juice.name}</h3>
-                    <p>price:${juice.price}</p>
+                    <p>price:Kshs${juice.price}</p>
                     <p>Size:${juice.size}</p>
                     <p>Flavour:${juice.flavour}</p>
                     <p>Status:${juice.isAvailable ? "Available" : "Not Available"}</p>
