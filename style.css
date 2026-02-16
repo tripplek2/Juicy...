@@ -7,10 +7,11 @@ body {
     color: #1100a7;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
 }
 
 
-h1,h2 {
+h1,h2, h3{
     color: transparent;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -47,14 +48,26 @@ label {
 
 footer {
     color: #1100a7;
-    justify-content: center;
-    padding: 10px;
+    padding: 20px 10px 10px;
     margin-top: 30px;
-    display: flex;
     
-    
-
 }
+
+.contact-info {
+    margin: 5px;
+    font-size: large;
+    justify-content: center;
+    display: flex;
+}
+
+#footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    padding-top: 10px;
+    color: #04021a;
+}
+
 
 /* Form styling */
 
@@ -93,12 +106,12 @@ form {
  }
 
  .juice-card {
-    background-color: #1B998B;
+    background-color: #69DDFF;
     padding: 10px;
     border-radius: 10px;
     width: 200px;
     box-shadow: var(--shadow);
-    color: #FFFD82;
+    color: #27260b;
     
     
  }
