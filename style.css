@@ -123,7 +123,7 @@ form {
 
 /* Response styling */
 
- @media (max-width: 600px) {
+ @media (min-width: 600px) {
     nav {
         flex-direction: column;
     }
